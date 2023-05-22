@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+
+Route::get('students', [StudentController::class, 'index']);
+Route::put('students/{id}', [StudentController::class, 'update']);
 
 /*
 |--------------------------------------------------------------------------
