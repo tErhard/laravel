@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\GradeController;
 
-Route::get('students', [StudentController::class, 'index'])->middleware('auth:api');
-Route::put('students/{id}', [StudentController::class, 'update'])->middleware('auth:api', 'role:admin,editor');
+Route::get('students/{id}', [StudentController::class, 'show'])->middleware('auth:api');
+Route::post('students/{id}/grades', [GradeController::class, 'store'])->middleware('auth:api');
 
 
 /*
